@@ -2,8 +2,6 @@ package michael.alco.controllers;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -69,9 +67,9 @@ public class BrainController implements Initializable {
 
     private void addCircleWithAnimation() {
         if (DiseasesBase.percent == 25) {
-            circle.setRadius(50);
+            circle.setRadius(55);
         } else if (DiseasesBase.percent == 35) {
-            circle.setRadius(70);
+            circle.setRadius(80);
         }
         circle.setFill(Color.RED);
         circle.setOpacity(0.6);

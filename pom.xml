@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>michael.alco/michael.alco.HelloApplication</mainClass>
+                            <mainClass>michael.alco/michael.alco.AlcoApplication</mainClass>
                         </configuration>
                     </execution>
                 </executions>
