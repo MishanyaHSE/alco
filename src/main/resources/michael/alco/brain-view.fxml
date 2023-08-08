@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="michael.alco.controllers.BrainController">
    <children>
-      <ImageView fx:id="imageView" fitHeight="600.0" fitWidth="800.0" layoutX="228.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <ImageView fx:id="imageView" fitHeight="438.0" fitWidth="506.0" layoutX="294.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="155.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
+         <image>
+            <Image url="@../../../java/michael/alco/controllers/brain.png" />
+         </image></ImageView>
       <Button layoutX="274.0" layoutY="162.0" mnemonicParsing="false" onAction="#backClick" prefHeight="25.0" prefWidth="125.0" text="Назад" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
       <Button layoutX="734.0" layoutY="565.0" mnemonicParsing="false" onAction="#nextClick" prefHeight="25.0" prefWidth="125.0" text="Далее" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="342.0" layoutY="224.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Circle fx:id="circle" fill="DODGERBLUE" layoutX="447.0" layoutY="158.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label fx:id="brainLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="360.0" prefHeight="178.0" prefWidth="720.0" text="Label" wrapText="true" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="10.0">
+         <font>
+            <Font name="Calibri Bold" size="36.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
