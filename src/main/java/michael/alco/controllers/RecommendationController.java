@@ -32,7 +32,7 @@ public class RecommendationController implements Initializable {
     @FXML
     private void nextPageClick() {
         try {
-            Utility.changeScene("images-view.fxml", effectiveLabel, 800,600);
+            Utility.changeScene("brain-view.fxml", effectiveLabel, 800,600);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -28,8 +28,8 @@ public class SplashController implements Initializable {
         try {
             Image image = new Image(new FileInputStream("src/main/java/michael/alco/controllers/splash.jpg"));
             splashImageView.setImage(image);
-            splashImageView.setFitHeight(800);
-            splashImageView.setFitWidth(600);
+            splashImageView.setFitHeight(600);
+            splashImageView.setFitWidth(800);
             splashImageView.setPreserveRatio(true);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
