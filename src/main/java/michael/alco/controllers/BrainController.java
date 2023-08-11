@@ -21,13 +21,13 @@ import java.util.ResourceBundle;
 public class BrainController implements Initializable {
 
     @FXML
-    ImageView imageView;
+    private ImageView imageView;
 
     @FXML
-    Circle circle;
+    private Circle circle;
 
     @FXML
-    Label brainLabel;
+    private Label brainLabel;
 
     private boolean isBlack = true;
 
@@ -50,7 +50,11 @@ public class BrainController implements Initializable {
 
     @FXML
     private void nextClick() {
-
+        try {
+            Utility.changeScene("images-view.fxml", imageView, 800, 600);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void addBrainImage() {

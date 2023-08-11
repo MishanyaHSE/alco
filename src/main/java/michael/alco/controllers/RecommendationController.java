@@ -43,6 +43,8 @@ public class RecommendationController implements Initializable {
         setTextForHeadLabel();
         setContentText();
         setTextForEffectiveLabel();
+        DiseasesBase.pictures.clear();
+        addPictures();
     }
 
     private void setTextForHeadLabel() {
@@ -82,6 +84,23 @@ public class RecommendationController implements Initializable {
                     МРТ на точки: F8; TR15;
                     """);
             default -> contentText.setText("Не удалось назначить лечение");
+        }
+    }
+
+    private void addPictures() {
+        if (DiseasesBase.numberOfYears > 0) {
+            DiseasesBase.pictures.add("T20.png");
+            DiseasesBase.pictures.add("E36.PNG");
+            DiseasesBase.pictures.add("E42.jpg");
+//            DiseasesBase.pictures.add("P7.jpg");
+        }
+        if (DiseasesBase.numberOfYears > 1) {
+            DiseasesBase.pictures.add("VB20.jpeg");
+//            DiseasesBase.pictures.add("PR6.png");
+        }
+        if (DiseasesBase.numberOfYears > 2) {
+//            DiseasesBase.pictures.add("F8.PNG");
+//            DiseasesBase.pictures.add("TR15.jpg");
         }
     }
 
