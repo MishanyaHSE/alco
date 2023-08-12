@@ -5,12 +5,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import michael.alco.AlcoApplication;
 import michael.alco.model.DiseasesBase;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ImagesController implements Initializable {
@@ -52,16 +54,10 @@ public class ImagesController implements Initializable {
     }
 
     private void displayCurrentPicture(int index) {
-        try {
-            Image image = new Image(new FileInputStream("src/main/java/michael/alco/controllers/"
-                    + DiseasesBase.pictures.get(index)));
-            picturesImageView.setImage(image);
-            picturesImageView.setFitHeight(600);
-            picturesImageView.setFitWidth(800);
-            picturesImageView.setPreserveRatio(true);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Изображение иглоукалывания не найдено.");
-        }
+        Image image = new Image(Objects.requireNonNull(AlcoApplication.class.getResourceAsStream(DiseasesBase.pictures.get(index))));
+        picturesImageView.setImage(image);
+        picturesImageView.setFitHeight(600);
+        picturesImageView.setFitWidth(800);
+        picturesImageView.setPreserveRatio(true);
     }
 }

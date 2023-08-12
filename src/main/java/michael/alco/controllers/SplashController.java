@@ -15,6 +15,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class SplashController implements Initializable {
@@ -25,16 +26,16 @@ public class SplashController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        try {
-            Image image = new Image(new FileInputStream("src/main/java/michael/alco/controllers/splash.jpg"));
+//        try {
+            Image image = new Image(Objects.requireNonNull(AlcoApplication.class.getResourceAsStream("splash.jpg")));
             splashImageView.setImage(image);
             splashImageView.setFitHeight(600);
             splashImageView.setFitWidth(800);
             splashImageView.setPreserveRatio(true);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-            System.out.println("Не удалось загрузить изображение!");
-        }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//            System.out.println("Не удалось загрузить изображение!");
+//        }
     }
 
     @FXML

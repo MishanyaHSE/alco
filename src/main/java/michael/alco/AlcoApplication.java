@@ -16,6 +16,7 @@ public class AlcoApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("ALCO");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

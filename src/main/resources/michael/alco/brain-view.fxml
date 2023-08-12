@@ -12,7 +12,7 @@
    <children>
       <ImageView fx:id="imageView" fitHeight="438.0" fitWidth="506.0" layoutX="294.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="155.0" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="7.0">
          <image>
-            <Image url="@../../../java/michael/alco/controllers/brain.png" />
+            <Image url="@brain.png" />
          </image></ImageView>
       <Button layoutX="274.0" layoutY="162.0" mnemonicParsing="false" onAction="#backClick" prefHeight="25.0" prefWidth="125.0" text="Назад" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
       <Button layoutX="734.0" layoutY="565.0" mnemonicParsing="false" onAction="#nextClick" prefHeight="25.0" prefWidth="125.0" text="Далее" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />

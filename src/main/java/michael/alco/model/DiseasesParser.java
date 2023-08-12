@@ -1,8 +1,11 @@
 package michael.alco.model;
 
+import michael.alco.AlcoApplication;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Objects;
 
 public class DiseasesParser {
 
@@ -11,8 +14,8 @@ public class DiseasesParser {
 
 
     public static void readFile() throws IOException {
-        FileInputStream fis = new FileInputStream(path);
-        BufferedReader br = new BufferedReader(new InputStreamReader(fis));
+        BufferedReader br = new BufferedReader(
+                new InputStreamReader(Objects.requireNonNull(AlcoApplication.class.getResourceAsStream("diseases.txt"))));
 
         String line;
         while ((line = br.readLine()) != null) {

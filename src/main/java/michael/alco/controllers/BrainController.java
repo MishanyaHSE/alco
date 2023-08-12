@@ -10,12 +10,14 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
+import michael.alco.AlcoApplication;
 import michael.alco.model.DiseasesBase;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class BrainController implements Initializable {
@@ -58,15 +60,11 @@ public class BrainController implements Initializable {
     }
 
     private void addBrainImage() {
-        try {
-            Image image = new Image(new FileInputStream("src/main/java/michael/alco/controllers/brain.png"));
-            imageView.setImage(image);
-            imageView.setFitHeight(440);
-            imageView.setFitWidth(500);
-            imageView.setPreserveRatio(true);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+        Image image = new Image(Objects.requireNonNull(AlcoApplication.class.getResourceAsStream("brain.png")));
+        imageView.setImage(image);
+        imageView.setFitHeight(440);
+        imageView.setFitWidth(500);
+        imageView.setPreserveRatio(true);
     }
 
     private void addCircleWithAnimation() {

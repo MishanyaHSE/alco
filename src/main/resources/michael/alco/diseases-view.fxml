@@ -13,10 +13,10 @@
    <children>
       <ScrollPane layoutX="391.0" layoutY="30.0" prefHeight="530.0" prefWidth="408.0">
          <content>
-            <HBox alignment="CENTER_RIGHT" prefHeight="528.0" prefWidth="405.0">
+            <HBox alignment="CENTER_RIGHT" prefHeight="528.0" prefWidth="390.0">
                <children>
-                  <VBox fx:id="boxForCheckedDiseases" prefHeight="528.0" prefWidth="370.0" spacing="10.0" />
-                  <VBox fx:id="boxForButtons" alignment="TOP_RIGHT" prefHeight="528.0" prefWidth="30.0" spacing="10.0" />
+                  <VBox fx:id="boxForCheckedDiseases" prefHeight="528.0" prefWidth="360.0" spacing="10.0" />
+                  <VBox fx:id="boxForButtons" alignment="TOP_RIGHT" prefHeight="528.0" prefWidth="25.0" spacing="10.0" />
                </children>
             </HBox>
          </content>
