@@ -106,7 +106,7 @@ public class RecommendationController implements Initializable {
     private void addPictures() {
         if (DiseasesBase.numberOfYears > 0) {
             DiseasesBase.pictures.add("T20.png");
-            DiseasesBase.pictures.add("E36.PNG");
+            DiseasesBase.pictures.add("E36.png");
             DiseasesBase.pictures.add("E42.jpg");
 //            DiseasesBase.pictures.add("P7.jpg");
 

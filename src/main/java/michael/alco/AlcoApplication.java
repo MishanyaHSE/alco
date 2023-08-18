@@ -1,11 +1,13 @@
 package michael.alco;
 
 import javafx.application.Application;
+import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.EventListener;
 
 public class AlcoApplication extends Application {
     public Stage mainStage;
@@ -16,8 +18,8 @@ public class AlcoApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("ALCO");
         stage.setScene(scene);
-        stage.setResizable(false);
         stage.show();
+
     }
 
     public static void main(String[] args) {
