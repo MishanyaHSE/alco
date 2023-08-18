@@ -3,6 +3,7 @@ package michael.alco.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import michael.alco.AlcoApplication;
@@ -20,6 +21,9 @@ public class ImagesController implements Initializable {
     @FXML
     private ImageView picturesImageView;
 
+    @FXML
+    private Button closeButton;
+
     private int currentImage;
 
     @Override
@@ -33,6 +37,9 @@ public class ImagesController implements Initializable {
         if (currentImage + 1 < DiseasesBase.pictures.size()) {
             currentImage++;
             displayCurrentPicture(currentImage);
+        }
+        if (currentImage == DiseasesBase.pictures.size() - 1) {
+            closeButton.setVisible(true);
         }
     }
 
@@ -53,11 +60,16 @@ public class ImagesController implements Initializable {
         }
     }
 
+    @FXML
+    private void closeAppClick() {
+        System.exit(0);
+    }
+
     private void displayCurrentPicture(int index) {
         Image image = new Image(Objects.requireNonNull(AlcoApplication.class.getResourceAsStream(DiseasesBase.pictures.get(index))));
         picturesImageView.setImage(image);
         picturesImageView.setFitHeight(600);
         picturesImageView.setFitWidth(800);
-        picturesImageView.setPreserveRatio(true);
+        picturesImageView.setPreserveRatio(false);
     }
 }

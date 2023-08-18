@@ -17,15 +17,16 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <Button layoutX="21.0" layoutY="361.0" mnemonicParsing="false" onAction="#previousPageClick" prefHeight="40.0" prefWidth="150.0" text="Назад" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
-      <Button layoutX="526.0" layoutY="361.0" mnemonicParsing="false" onAction="#lowEffictiveClick" prefHeight="40.0" prefWidth="150.0" text="Низкая эффективность" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="21.0" layoutY="361.0" mnemonicParsing="false" onAction="#previousPageClick" prefHeight="40.0" prefWidth="150.0" text="Назад" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="526.0" layoutY="361.0" mnemonicParsing="false" onAction="#lowEffictiveClick" prefHeight="40.0" prefWidth="150.0" text="Лечение невозможно" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <TextField fx:id="inputField" alignment="CENTER" layoutX="345.0" layoutY="285.0" prefHeight="30.0" prefWidth="110.0" promptText="цифра от 1 до 5" />
       <Label layoutX="254.0" layoutY="138.0" text="Рекомендуемый срок - 1 год">
          <font>
             <Font name="Calibri" size="24.0" />
          </font>
       </Label>
-      <Button layoutX="206.0" layoutY="550.0" mnemonicParsing="false" onAction="#twentyFiveClick" prefHeight="40.0" prefWidth="150.0" text="25%" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="220.0" />
-      <Button layoutX="455.0" layoutY="550.0" mnemonicParsing="false" onAction="#thirtyFiveClick" prefHeight="40.0" prefWidth="150.0" text="35%" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="220.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="206.0" layoutY="550.0" mnemonicParsing="false" onAction="#twentyFiveClick" prefHeight="40.0" prefWidth="150.0" text="25%" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="167.5" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="455.0" layoutY="550.0" mnemonicParsing="false" onAction="#thirtyFiveClick" prefHeight="40.0" prefWidth="150.0" text="35%" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="325.0" AnchorPane.rightAnchor="325.0" />
+      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="325.0" layoutY="550.0" mnemonicParsing="false" onAction="#aboveThirtyFiveClick" prefHeight="40.0" prefWidth="150.0" text="более 35%" AnchorPane.rightAnchor="167.5" />
    </children>
 </AnchorPane>

@@ -4,17 +4,14 @@ import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 import michael.alco.AlcoApplication;
 import michael.alco.model.DiseasesBase;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -26,28 +23,44 @@ public class BrainController implements Initializable {
     private ImageView imageView;
 
     @FXML
-    private Circle circle;
+    private Label brainLabel;
 
     @FXML
-    private Label brainLabel;
+    private Button closeButton;
+
+    @FXML
+    private Button nextPageButton;
 
     private boolean isBlack = true;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-            addBrainImage();
-            addCircleWithAnimation();
-            addTextToLabel();
+        if (DiseasesBase.percent == 25) {
+            addBrainAnimation("brain1_0.png", "brain1_1.png");
+        } else if (DiseasesBase.percent == 35){
+            addBrainAnimation("brain2_0.png", "brain2_1.png");
+        } else if (DiseasesBase.percent == 40) {
+            addBrainAnimation("brain3_0.png", "brain3_1.png");
+        } else if (DiseasesBase.percent == Integer.MAX_VALUE) {
+            addBrainAnimation("brain4_0.png", "brain4_1.png");
+            nextPageButton.setVisible(false);
+            closeButton.setVisible(true);
+        }
+        addTextToLabel();
     }
 
     @FXML
-    public void backClick() {
+    private void closeAppClick() {
+        System.exit(0);
+    }
+
+    @FXML
+    private void backClick() {
         try {
             Utility.changeScene("recommendation-view.fxml", imageView, 800, 600);
         } catch(IOException e) {
             e.printStackTrace();
         }
-
     }
 
     @FXML
@@ -59,29 +72,21 @@ public class BrainController implements Initializable {
         }
     }
 
-    private void addBrainImage() {
-        Image image = new Image(Objects.requireNonNull(AlcoApplication.class.getResourceAsStream("brain.png")));
+    private void addBrainImage(String name) {
+        Image image = new Image(Objects.requireNonNull(AlcoApplication.class.getResourceAsStream(name)));
         imageView.setImage(image);
-        imageView.setFitHeight(440);
-        imageView.setFitWidth(500);
-        imageView.setPreserveRatio(true);
+        imageView.setFitHeight(481);
+        imageView.setFitWidth(668);
+        imageView.setPreserveRatio(false);
     }
 
-    private void addCircleWithAnimation() {
-        if (DiseasesBase.percent == 25) {
-            circle.setRadius(55);
-        } else if (DiseasesBase.percent == 35) {
-            circle.setRadius(80);
-        }
-        circle.setFill(Color.RED);
-        circle.setOpacity(0.6);
-        circle.setStrokeWidth(2);
-        Timeline tl = new Timeline(new KeyFrame(Duration.millis(100), actionEvent -> {
+    private void addBrainAnimation(String first, String second) {
+        Timeline tl = new Timeline(new KeyFrame(Duration.millis(80), actionEvent -> {
             if (isBlack) {
-                circle.setStroke(Color.WHITE);
+                addBrainImage(first);
                 isBlack = false;
             } else {
-                circle.setStroke(Color.BLACK);
+                addBrainImage(second);
                 isBlack = true;
             }
         }));
@@ -93,8 +98,12 @@ public class BrainController implements Initializable {
         if (DiseasesBase.percent <= 35) {
             brainLabel.setText("Красным отмечены зоны поражения. Поражено менее " + DiseasesBase.percent +
                     "%, гарантия эффективности лечения более 98%.");
+        } else if (DiseasesBase.percent == 40) {
+            brainLabel.setText("Красным отмечены зоны поражения. Поражено более 35%. " +
+                    "Гарантия эффективности лечения менее 30%.");
         } else {
-            brainLabel.setText("Bad case");
+            brainLabel.setText("Красным отмечены зоны поражения. Поражено более 40%. " +
+                    "Необходима дополнительная детоксикация.");
         }
     }
 }

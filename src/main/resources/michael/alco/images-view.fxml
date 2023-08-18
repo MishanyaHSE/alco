@@ -10,5 +10,6 @@
       <Button layoutX="14.0" layoutY="561.0" mnemonicParsing="false" onAction="#backButtonClick" prefHeight="25.0" prefWidth="125.0" text="Назад" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />
       <Button layoutX="14.0" layoutY="288.0" mnemonicParsing="false" onAction="#previousPictureClick" text="&lt;&lt;&lt;" AnchorPane.leftAnchor="10.0" />
       <Button layoutX="734.0" layoutY="288.0" mnemonicParsing="false" onAction="#nextPictureClick" text="&gt;&gt;&gt;" AnchorPane.rightAnchor="10.0" />
+      <Button fx:id="closeButton" layoutX="738.0" layoutY="564.0" mnemonicParsing="false" onAction="#closeAppClick" prefHeight="25.0" prefWidth="125.0" text="Выйти" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0" />
    </children>
 </AnchorPane>

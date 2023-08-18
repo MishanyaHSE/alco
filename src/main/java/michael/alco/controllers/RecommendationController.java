@@ -3,6 +3,7 @@ package michael.alco.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import michael.alco.model.DiseasesBase;
 
@@ -85,6 +86,21 @@ public class RecommendationController implements Initializable {
                     """);
             default -> contentText.setText("Не удалось назначить лечение");
         }
+        switch (DiseasesBase.percent) {
+            case 25:
+            case 35:
+                break;
+            case 40:
+                contentText.setText(contentText.getText() + "\nЭффективность лечения ниже 30%, необходима дополнительная процедура.");
+                break;
+            case Integer.MAX_VALUE:
+                contentText.setText("Лечение провести невозможно, необходима дополнительная детоксикация.");
+                contentText.setFont(Font.font(18));
+                break;
+            default:
+                System.out.println("Unknown percent.");
+                break;
+        }
     }
 
     private void addPictures() {
@@ -93,6 +109,7 @@ public class RecommendationController implements Initializable {
             DiseasesBase.pictures.add("E36.PNG");
             DiseasesBase.pictures.add("E42.jpg");
 //            DiseasesBase.pictures.add("P7.jpg");
+
         }
         if (DiseasesBase.numberOfYears > 1) {
             DiseasesBase.pictures.add("VB20.jpeg");
@@ -108,8 +125,10 @@ public class RecommendationController implements Initializable {
         effectiveLabel.setStyle("-fx-background-color:#00bfff");
         if (DiseasesBase.percent <= 35) {
             effectiveLabel.setText("Внимание доктор! Процент поражения менее " + DiseasesBase.percent + "%\n Гарантия эффективности лечения до 98%");
-        } else {
+        } else if (DiseasesBase.percent == 40) {
             effectiveLabel.setText("Внимание доктор! Процент поражения более 35%.\n Гарантия эффективности лечения менее 30%.");
+        } else {
+            effectiveLabel.setText("Внимание доктор! Лечение провести невозможно, \nтребуется дополнительная детоксикация.");
         }
     }
 }

@@ -1,7 +1,6 @@
 package michael.alco.controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import michael.alco.model.DiseasesBase;
@@ -26,8 +25,12 @@ public class YearsController {
     }
 
     @FXML
-    private void lowEffictiveClick() {
-        loadNextScene(Integer.MAX_VALUE);
+    private void lowEffictiveClick() {loadNextScene(Integer.MAX_VALUE);
+    }
+
+    @FXML
+    private void aboveThirtyFiveClick() {
+        loadNextScene(40);
     }
 
     @FXML
